@@ -1,0 +1,237 @@
+@import 'normalize';
+@import 'mixins';
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
+
+
+$primary-color: #000000;
+$default-color: #ffffff;
+$secondary-color: rgba(0,0,0, .4);
+$btn-color: #041E36;
+* {
+	box-sizing: border-box;
+}
+
+:active, :hover, :focus {
+    outline-color: transparent !important;
+    outline-offset: 0!important;
+}
+
+html {
+	font-size: 10px;
+	height: 100%;
+	scroll-behavior: smooth;
+}
+
+
+body {
+	font-family: 'Manrope', sans-serif;
+	font-size: 1.6rem;
+	line-height: 1.2;
+	min-height: 100%;
+	font-weight: 400;
+	background: $default-color;
+}
+a {
+	text-decoration: none;
+	color: $primary-color;
+}
+
+
+//Helpers*******************************************
+.wrapper {
+	max-width: 1670px;
+	width: 90%;
+	margin: 0 auto;
+	height: 100%;
+}
+.btn {
+	display: block;
+	color: $default-color;
+	background: $btn-color;
+	font-weight: 700;
+	font-size: 1.4rem;
+	padding: 20px 5px;
+	border-radius: 5px;
+	width: 250px;
+	text-align: center;
+}
+
+
+
+
+//Header-section********************************************
+.header {
+	padding: 10px 0;
+	background: $default-color;
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+	&__wrap {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__link,
+	&__soc-link  {
+		color: $primary-color;
+	}
+	&__link {
+		font-size: 2.4rem;
+		font-weight: 700;
+		letter-spacing: 4px;
+		text-transform: uppercase;
+	}
+	&__soc-link {
+		width: 40px;
+		height: 40px;
+		border: 1px solid $primary-color;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		@include tr(all, .1s);
+		&:hover,
+		&:focus {
+			// background: $secondary-color;
+			box-shadow: 0px 0px 11px 0px rgba(50, 50, 50, 0.75);;
+		}
+		img {
+			width: 24px;
+			height: 24px;
+		}
+		&:nth-child(2) {
+			margin: 0 15px;
+		}
+	}
+	&__social {
+		display: flex;
+	}
+	&__enter-link {
+		img {
+			width: 30px;
+			height: 30px;
+		}
+	}
+}
+
+
+
+
+
+//Welcome-block************************************************
+.welcome {
+	height: 90vh;
+	&__content {
+		display: flex;
+		align-items: center;
+		height: 100%;	
+	}
+	&__text {
+		width: 50%;
+	}
+	&__description {
+		font-size: 1.4rem;
+		font-weight: 700;
+		&:last-of-type {
+			margin-bottom: 60px;
+		}
+		span {
+			font-weight: 700;
+			font-size: 2.5rem;
+			color: $secondary-color;
+		}	
+	}
+}
+
+
+
+
+
+//About-section******************************
+.about {
+
+}
+
+
+
+
+
+
+//Footer-section******************************
+.footer {
+	font-size: 1.4rem;
+	&__title {
+		font-size: 1.6rem;
+	}
+	&__info,
+	&__copy {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	&__info {
+		border-top: 1px solid $secondary-color;
+		border-bottom: 1px solid $secondary-color;
+		padding: 0 0 30px 0;
+		
+	}
+	&__copy {
+		padding: 40px 0;
+	}
+	&__docs,
+	&__cabinet,
+	&__services,
+	&__contacts {
+		display: flex;
+		flex-direction: column;
+		min-width: 230px;
+		padding-top: 40px;
+	}
+	&__social {
+		display: flex;
+		margin: 0 0 15px 0;
+	}
+	&__soc-link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 25px;
+		height: 25px;
+		border-radius: 50%;
+		border: 1px solid $primary-color;
+		@include tr(all, .1s);
+		&:nth-child(2) {
+			margin: 0 10px;
+		}
+		img {
+			width: 15px;
+			height: 15px;
+		}
+		&:hover,
+		&:focus {
+			// background: $secondary-color;
+			box-shadow: 0px 0px 11px 0px rgba(50, 50, 50, 0.75);;
+		}
+	}
+	&__link-tel,
+	&__cabinet-link,
+	&__doc-link,
+	&__service,
+	&__link-mail {
+		margin-bottom: 10px;
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+	&__link-mail {
+		margin-bottom: 0;
+	}
+	&__title {
+		margin-bottom: 15px;
+	}
+	&__lang {
+		border: none;
+		outline: transparent;
+	}
+}
