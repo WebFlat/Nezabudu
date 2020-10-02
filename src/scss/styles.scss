@@ -86,9 +86,9 @@ h2 {
 		text-transform: uppercase;
 	}
 	&__soc-link {
-		width: 40px;
-		height: 40px;
-		border: 1px solid $primary-color;
+		width: 27px;
+		height: 27px;
+		border: 2px solid $primary-color;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -100,8 +100,8 @@ h2 {
 			box-shadow: 0px 0px 11px 0px rgba(50, 50, 50, 0.75);;
 		}
 		img {
-			width: 24px;
-			height: 24px;
+			width: 15px;
+			height: 15px;
 		}
 		&:nth-child(2) {
 			margin: 0 15px;
@@ -111,9 +111,21 @@ h2 {
 		display: flex;
 	}
 	&__enter-link {
+		display: flex;
+		align-items: center;
+		@include tr(all, .2s);
+		span {
+			margin-right: 10px;
+			font-size: 2rem;
+			font-weight: 700;
+		}
 		img {
 			width: 30px;
 			height: 30px;
+		}
+		&:hover,
+		&:focus {
+			color: $secondary-color;
 		}
 	}
 }
@@ -124,25 +136,30 @@ h2 {
 
 //Welcome-block************************************************
 .welcome {
-	height: 90vh;
+	height: 100vh;
 	&__content {
 		display: flex;
 		align-items: center;
 		height: 100%;	
 	}
+	&__title {
+		font-size: 3.2rem;
+	}
 	&__text {
 		width: 50%;
 	}
-	&__description {
+	&__description,
+	&__subtitle {
 		font-size: 1.4rem;
 		font-weight: 700;
+		color: $secondary-color;
 		&:last-of-type {
 			margin-bottom: 60px;
 		}
 		span {
 			font-weight: 700;
 			font-size: 2.5rem;
-			color: $secondary-color;
+			color: $primary-color;
 		}	
 	}
 }
@@ -153,10 +170,131 @@ h2 {
 
 //About-section******************************
 .about {
+	&__title,
+	&__subtitle {
+		width: 60%;
+	}
+	&__content {
+		display: flex;
+		justify-content:center;
+		position: relative;
+	}
+	&__gallery {
+		width: 45%;
+		display: grid;
+		align-items: end;
+		// grid-template-rows: repeat(2, 1fr);
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 10px;
+	}
+	&__items {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 45%;
+		align-items: flex-end;
+	}
+	&__img-wrap {
+		width: 100%;
+		max-width: 280px;
+		height: 350px;
+		background: $secondary-color;
+		margin: 10px 0 30px 0;
+		overflow: hidden;
+		position: relative;
+	}
+	&__img {
+		@include myPos();
+	}
+	&__text-center {
+		display: block;
+		width: 300px;
+		height: 300px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		@include myPos(50%, 50%, -50%,-50%);
+		font-size: 3.5rem;
+		font-weight: 700;
+		background: $default-color;
+	}
 
 }
 
 
+
+
+//Posibility section******************************
+.posibility {
+	padding-top: 150px;
+	&__title {
+		font-size: 2.8rem;
+		text-align: center;
+	}
+	&__content {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	&__item {
+		position: relative;
+		margin-top: 80px;
+		width: 50%;
+		display: flex;
+		justify-content: flex-end;
+		&:nth-child(2n) {
+			justify-content: flex-start;
+		}
+	}
+	&__img-wrap,
+	&__link {
+		width: 280px;
+		min-width: 280px;
+		height: 280px;
+		border-radius: 50%;
+		border: 1px solid $secondary-color;
+		overflow: hidden;
+	}
+	&__link {
+		padding: 0 15px;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		left: -60px;
+		z-index: 2;
+		background: $default-color;
+		animation: 3s shine infinite;
+		animation-delay: 2s;
+		border: 20px solid $btn-text;
+
+	}
+	&__subtitle {
+		font-weight: 500;
+		font-size: 1.6rem;
+	}
+	&__text {
+		font-size: 1.3rem;
+		margin-top: 20px;
+		line-height: 1.6;
+	}
+
+}
+
+@keyframes shine {
+	0% {
+		border-color: $btn-text;
+	}
+	50% {
+		border-color: $btn-color;
+	}
+	100% {
+		border-color: $btn-text;
+	}
+}
 
 
 
