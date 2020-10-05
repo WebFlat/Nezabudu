@@ -1,0 +1,36 @@
+<section class="search">
+    <div class="wrapper" style="text-align: center;">
+        <h2 class="search__title">Мы на стадии запуска проекта</h2>
+        <p class="search__subtitle">Если не нашли данные о человеке,заполните анкету.</p>
+        <form action="POST" class="search__form">
+            <div class="search__block-input">
+                <div class="search__name">
+                    <label for="search-name">Поиск по ФИО</label>
+                    <input type="text" id="search-name" required placeholder="Иванов Иван">
+                </div>
+                <div class="search__city">
+                    <label for="search-city">Поиск по городу</label>
+                    <input type="text" id="search-city" required placeholder="Мариуполь">
+                </div>
+            </div>
+            <select class="select__options search__select" id="activity">
+                <option value="hide">Род деятельности</option>
+                <option value="Исскуство" rel="icon-temperature">Исскуство</option>
+                <option value="Медицина">Медицина</option>
+                <option value="Служба">Служба</option>
+                <option value="Металлург">Металлург</option>
+                <option value="Муниципалитет">Муниципалитет</option>
+            </select>
+            <select class="select__options search__select" id="years">
+                <option value="hide">Годовой диапазон</option>
+                <option value="1950-1960" rel="icon-temperature">1950-1960</option>
+                <option value="1960-1970">1960-1970</option>
+                <option value="1970-1980">1970-1980</option>
+                <option value="1980-1990">1980-1990</option>
+                <option value="1990-2000">1990-2000</option>
+                <option value="2000-по сегодня">2000 - по сегодня</option>
+            </select>
+            <input type="submit" class="btn search__btn" value="Поиск">
+        </form>
+    </div>
+</section>

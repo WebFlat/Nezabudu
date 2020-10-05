@@ -67,10 +67,92 @@ h2 {
 	width: 250px;
 	text-align: center;
 	cursor: pointer;
+	border: none;
 	@include tr(all, .1s);
 	&:hover,
 	&:focus {
 		box-shadow: 0px 0px 21px 0px rgba(50, 50, 50, 0.91);
+	}
+}
+
+.select-hidden {
+display: none;
+visibility: hidden;
+padding-right: 10px;
+}
+.select {
+	background-color: $select-background;
+	text-align: left;
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	width: $select-width;
+	height: $select-height;
+	max-width: 590px;
+	margin: 20px 0;
+	padding: 30px 0 30px 20px;
+	border: 1.5px solid $border-color;
+	color: rgba(0,0,0, .3) !important;
+	font-weight: 700;
+	font-size: 1.4rem;
+}
+.select-styled {
+	position: absolute; 
+	top: 25%;
+	right: 0;
+	bottom: 0;
+	left: 10px;
+	// background-color: $select-background;
+	padding: 8px 15px;
+	@include tr(all, 0.2s);
+	&:after {
+		content:"";
+		width: 0;
+		height: 0;
+		border: 7px solid transparent;
+		border-color: $select-color transparent transparent transparent;
+		position: absolute;
+		top: 12px;
+		right: 25px;
+	}
+	&:hover {
+		border-color: $btn-color;
+	}
+	&:active, 
+	&.select-active {
+		border-color: $btn-color;
+		color: rgba(0,0,0, .3) !important;
+		&:after {
+		top: 5px;
+		border-color: transparent transparent $select-color transparent;
+		}
+	}
+}
+	
+.select-options {
+	display: none; 
+	position: absolute;
+	top: 100%;
+	right: 0;
+	left: 0;
+	z-index: 999;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	background-color: $select-background;
+	li {
+		color: rgba(0,0,0, .3) !important;
+		margin: -1px -1.5px 0 -1.5px;
+		padding: 12px 0;
+		text-indent: 20px;
+		border: 1.5px solid darken($select-background, 10);
+		@include tr(all, 0.15s);
+		&:hover {
+			background: $border-color;
+		}
+		&[rel="hide"] {
+		display: none;
+		}
 	}
 }
 
@@ -296,6 +378,28 @@ h2 {
 		animation: 3s shine infinite;
 		animation-delay: 2s;
 		border: 20px solid $btn-text;
+		@include tr(color, .2s);
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			color: #fff;
+			text-decoration: none;
+			background: linear-gradient(0deg, rgb(101, 31, 102), rgb(173, 65, 169));
+			opacity: 0;
+			transition: opacity .4s;
+			z-index: -1;
+		}
+		&:hover:after {
+			opacity: 1;
+		}
+		&:hover {
+			color: $default-color;
+			animation-play-state: paused;
+		}
 
 	}
 	&__subtitle {
@@ -315,11 +419,66 @@ h2 {
 		border-color: $btn-text;
 	}
 	50% {
-		border-color: $btn-color;
+		border-color: #9f9999;
+
 	}
 	100% {
 		border-color: $btn-text;
 	}
+}
+
+
+//search section******************************
+.search {
+	padding-top: 140px;
+	&__title {
+		font-size: 2.8rem;
+	}
+	&__form,
+	&__block-input  {
+		display: flex;
+		flex-direction: column;		
+	}
+	&__form {
+		width: 100%;
+		max-width: 590px;
+		align-items: center;
+		margin: 40px auto 0 auto;
+	}
+	&__block-input {
+		align-items: flex-start;
+		width: 100%;
+		max-width: 590px;
+	}
+	&__name,
+	&__city {
+		width: 100%;
+		input {
+			border: 1.5px solid rgba(0,0,0, .2);
+			margin: 20px 0;
+			padding: 25px 30px;
+			width: 100%;
+			&::placeholder {
+				color: rgba(0,0,0, .3);
+				font-weight: 700;
+				font-size: 1.4rem;
+			}
+		}
+		label {
+			display: block;
+			text-align: left;
+		}
+	}
+	&__btn {
+		margin: 20px auto 0 auto;
+	}
+	.select {
+		width: 100%;	
+		max-width: 590px;
+		
+	}
+
+
 }
 
 
@@ -447,89 +606,9 @@ h2 {
 	}
 	&__btn {
 		margin-top: 30px;
-		border: none;
 	}
-	.select-hidden {
-		display: none;
-		visibility: hidden;
-		padding-right: 10px;
-	}
-	.select {
-		background-color: $select-background;
-		text-align: left;
-		cursor: pointer;
-		display: inline-block;
-		position: relative;
-		width: $select-width;
-		height: $select-height;
-		max-width: 590px;
-		margin: 20px 0;
-		padding: 30px 0 30px 20px;
-		border: 1.5px solid $border-color;
-		color: rgba(0,0,0, .3) !important;
-		font-weight: 700;
-		font-size: 1.4rem;
-	  }
-	  .select-styled {
-		position: absolute; 
-		top: 25%;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		// background-color: $select-background;
-		padding: 8px 15px;
-		// @include transition(all 0.2s ease-in);
-		&:after {
-		  content:"";
-		  width: 0;
-		  height: 0;
-		  border: 7px solid transparent;
-		  border-color: $select-color transparent transparent transparent;
-		  position: absolute;
-		  top: 12px;
-		  right: 25px;
-		}
-		&:hover {
-			border-color: $btn-color;
-		}
-		&:active, 
-		&.select-active {
-			border-color: $btn-color;
-			color: rgba(0,0,0, .3) !important;
-		  &:after {
-			top: 5px;
-			border-color: transparent transparent $select-color transparent;
-		  }
-		}
-	  }
-	  
-	  .select-options {
-		display: none; 
-		position: absolute;
-		top: 100%;
-		right: 0;
-		left: 0;
-		z-index: 999;
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		background-color: $select-background;
-		li {
-		  color: rgba(0,0,0, .3) !important;
-		  margin: -1px 0 0 0;
-		  padding: 12px 0;
-		  text-indent: 15px;
-		  border: 1px solid darken($select-background, 10);
-		  @include tr(all, 0.15s);
-		  &:hover {
-			background: $border-color;
-		  }
-		  &[rel="hide"] {
-			display: none;
-		  }
-		}
-	  }
 }
+
 
 
 

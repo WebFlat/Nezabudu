@@ -12,7 +12,7 @@ jQuery(function($){
 		});
 	});
 
-	$('.volunteers__options').each(function(){
+	$('.select__options').each(function(){
 		var $this = $(this), numberOfOptions = $(this).children('option').length;
 	  
 		$this.addClass('select-hidden'); 
