@@ -79,10 +79,10 @@
 	    <div class="wrapper">
 	        <div class="about__content">
 	            <div class="about__gallery">
-	                <div class="about__img-wrap"><img src="" alt="" class="about__img"></div>
-	                <div class="about__img-wrap"><img src="" alt="" class="about__img"></div>
-	                <div class="about__img-wrap"><img src="" alt="" class="about__img"></div>
-	                <div class="about__img-wrap"><img src="" alt="" class="about__img"></div>
+	                <div class="about__img-wrap"><img src="./img/retro1.webp" alt="photo" class="about__img"></div>
+	                <div class="about__img-wrap"><img src="./img/interview.jpg" alt="photo" class="about__img"></div>
+	                <div class="about__img-wrap"><img src="./img/about3.jpg" alt="photo" class="about__img"></div>
+	                <div class="about__img-wrap"><img src="./img/about1.jpg" alt="photo" class="about__img"></div>
 	            </div>
 	            <span class="about__text-center">Не забудь</span>
 	            <div class="about__items">
@@ -100,7 +100,7 @@
 	        <div class="posibility__content">
 	            <div class="posibility__item">
 	                <div class="posibility__img-wrap">
-	                    <img src="" alt="photo" class="posibility__img">
+	                    <img src="./img/about4.jpg" alt="photo" class="posibility__img">
 	                </div>
 	                <a href="#" class="posibility__link">
 	                    <h6 class="posibility__subtitle">Заполнить анкету</h6>
@@ -109,7 +109,7 @@
 	            </div>
 	            <div class="posibility__item">
 	                <div class="posibility__img-wrap">
-	                    <img src="" alt="photo" class="posibility__img">
+	                    <img src="./img/find.jpg" alt="photo" class="posibility__img">
 	                </div>
 	                <a href="#" class="posibility__link">
 	                    <h6 class="posibility__subtitle">Найти место захоронения</h6>
@@ -118,7 +118,7 @@
 	            </div>
 	            <div class="posibility__item">
 	                <div class="posibility__img-wrap">
-	                    <img src="" alt="photo" class="posibility__img">
+	                    <img src="./img/about5.jpg" alt="photo" class="posibility__img">
 	                </div>
 	                <a href="#" class="posibility__link">
 	                    <h6 class="posibility__subtitle">Облачный фотоархив</h6>
@@ -127,7 +127,7 @@
 	            </div>
 	            <div class="posibility__item">
 	                <div class="posibility__img-wrap">
-	                    <img src="" alt="photo" class="posibility__img">
+	                    <img src="./img/qr-code.svg" style="width: 150px;height: 150px;" alt="photo" class="posibility__img">
 	                </div>
 	                <a href="#" class="posibility__link">
 	                    <h6 class="posibility__subtitle">QR наклейка</h6>
@@ -136,7 +136,7 @@
 	            </div>
 	            <div class="posibility__item">
 	                <div class="posibility__img-wrap">
-	                    <img src="" alt="photo" class="posibility__img">
+	                    <img src="./img/uhod.webp" alt="photo" class="posibility__img">
 	                </div>
 	                <a href="#" class="posibility__link">
 	                    <h6 class="posibility__subtitle">Уход</h6>
@@ -145,7 +145,7 @@
 	            </div>
 	            <div class="posibility__item">
 	                <div class="posibility__img-wrap">
-	                    <img src="" alt="photo" class="posibility__img">
+	                    <img src="./img/album.jpg" alt="photo" class="posibility__img">
 	                </div>
 	                <a href="#" class="posibility__link">
 	                    <h6 class="posibility__subtitle">Читать истории</h6>
@@ -178,6 +178,14 @@
 	        </p>
 	        <div class="partners__items">
 	            <div class="partners__logo-wrap">
+	                <!-- <img src="" alt="photo" class="partners__img"> -->
+	                <span>Наш<br> партнер</span>
+	            </div>
+	            <div class="partners__logo-wrap">
+	                <!-- <img src="" alt="" class="partners__img"> -->
+	                <span>Наш<br> партнер</span>
+	            </div>
+	            <div class="partners__logo-wrap">
 	                <!-- <img src="" alt="" class="partners__img"> -->
 	                <span>Наш<br> партнер</span>
 	            </div>
@@ -200,12 +208,20 @@
 	    <div class="wrapper">
 	        <div class="volunteers__content">
 	            <div class="volunteers__text">
-	                <h2 class="volunteers__title">Стань волонтером</h2>
+	                <h2 class="volunteers__title">Стань партнером или волонтером</h2>
 	                <p class="volunteers__subtitle">Оставь заявку стань частью чего-то большего -<br>
 	                культурное наследие города и оцифровка территорий</p>
 	                <form action="POST" class="volunteers__form">
 	                    <input type="text" class="volunteers__name" required placeholder="Иванов Иван">
 	                    <input type="tel" class="volunteers__tel" required placeholder="+38 (050) 123-45-67">
+	                    <select class="volunteers__options" id="helps">
+	                        <option value="hide">Чем вы можете нам помочь</option>
+	                        <option value="Помощь в отцифровке" rel="icon-temperature">Помощь в отцифровке</option>
+	                        <option value="Спонсорство">Спонсорство</option>
+	                        <option value="Помощь в гос.учреждениях">Помощь в гос.учреждениях</option>
+	                        <option value="Помощь в культорном направлении">Помощь в культорном направлении</option>
+	                        <option value="Партнерство">Партнерство</option>
+	                    </select>
 	                    <input type="submit" class="volunteers__btn btn" value="Отправить заявку">
 	                </form>
 	            </div>

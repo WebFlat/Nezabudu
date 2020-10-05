@@ -1,5 +1,7 @@
 @import 'normalize';
 @import 'mixins';
+@import 'slick';
+@import 'slick-theme';
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
 
 
@@ -8,6 +10,13 @@ $default-color: #ffffff;
 $secondary-color: rgba(0,0,0, .4);
 $btn-color: #041E36;
 $btn-text: #C1C3C4;
+
+//select section******************************
+$select-color: $primary-color;
+$select-background: $default-color;
+$select-width: 80%;
+$select-height: auto;
+$border-color: rgba(0,0,0,0.2);
 * {
 	box-sizing: border-box;
 }
@@ -58,6 +67,11 @@ h2 {
 	width: 250px;
 	text-align: center;
 	cursor: pointer;
+	@include tr(all, .1s);
+	&:hover,
+	&:focus {
+		box-shadow: 0px 0px 21px 0px rgba(50, 50, 50, 0.91);
+	}
 }
 
 
@@ -185,7 +199,7 @@ h2 {
 		align-items: end;
 		// grid-template-rows: repeat(2, 1fr);
 		grid-template-columns: repeat(2, 1fr);
-		grid-gap: 10px;
+		grid-gap: 30px;
 	}
 	&__items {
 		display: flex;
@@ -197,14 +211,17 @@ h2 {
 	&__img-wrap {
 		width: 100%;
 		max-width: 280px;
-		height: 350px;
-		background: $secondary-color;
-		margin: 10px 0 30px 0;
+		height: 300px;
+		// background: rgba(0,0,0, .1);
+		// margin: 10px 0 30px 0;
 		overflow: hidden;
 		position: relative;
 	}
 	&__img {
 		@include myPos();
+		max-width: 160%;
+		// height: 100%;
+		// opacity: .7;
 	}
 	&__text-center {
 		display: block;
@@ -245,6 +262,15 @@ h2 {
 		justify-content: flex-end;
 		&:nth-child(2n) {
 			justify-content: flex-start;
+		}
+	}
+	&__img-wrap {
+		overflow: hidden;
+		position: relative;
+		opacity: .7;
+		img {
+			@include myPos();
+			max-width: 150%;
 		}
 	}
 	&__img-wrap,
@@ -423,7 +449,86 @@ h2 {
 		margin-top: 30px;
 		border: none;
 	}
-	
+	.select-hidden {
+		display: none;
+		visibility: hidden;
+		padding-right: 10px;
+	}
+	.select {
+		background-color: $select-background;
+		text-align: left;
+		cursor: pointer;
+		display: inline-block;
+		position: relative;
+		width: $select-width;
+		height: $select-height;
+		max-width: 590px;
+		margin: 20px 0;
+		padding: 30px 0 30px 20px;
+		border: 1.5px solid $border-color;
+		color: rgba(0,0,0, .3) !important;
+		font-weight: 700;
+		font-size: 1.4rem;
+	  }
+	  .select-styled {
+		position: absolute; 
+		top: 25%;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		// background-color: $select-background;
+		padding: 8px 15px;
+		// @include transition(all 0.2s ease-in);
+		&:after {
+		  content:"";
+		  width: 0;
+		  height: 0;
+		  border: 7px solid transparent;
+		  border-color: $select-color transparent transparent transparent;
+		  position: absolute;
+		  top: 12px;
+		  right: 25px;
+		}
+		&:hover {
+			border-color: $btn-color;
+		}
+		&:active, 
+		&.select-active {
+			border-color: $btn-color;
+			color: rgba(0,0,0, .3) !important;
+		  &:after {
+			top: 5px;
+			border-color: transparent transparent $select-color transparent;
+		  }
+		}
+	  }
+	  
+	  .select-options {
+		display: none; 
+		position: absolute;
+		top: 100%;
+		right: 0;
+		left: 0;
+		z-index: 999;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		background-color: $select-background;
+		li {
+		  color: rgba(0,0,0, .3) !important;
+		  margin: -1px 0 0 0;
+		  padding: 12px 0;
+		  text-indent: 15px;
+		  border: 1px solid darken($select-background, 10);
+		  @include tr(all, 0.15s);
+		  &:hover {
+			background: $border-color;
+		  }
+		  &[rel="hide"] {
+			display: none;
+		  }
+		}
+	  }
 }
 
 
@@ -461,13 +566,27 @@ h2 {
 	}
 	&__items {
 		margin-top: 50px;
-		display: flex;
-		justify-content: space-around;
 		font-size: 3rem;
 		font-weight: 700;
 		color: $secondary-color;
 		span {
 			opacity: .3;
 		}
+	}
+	.slick-dots {
+		bottom: -60px;
+		font-size: 1.8rem;
+	}
+	.slick-dots li button:before {
+		content: '';
+		width: 10px;
+		height: 5px;
+		background: $secondary-color;
+		cursor: pointer;
+		bottom: 0;
+		top: auto;
+	}
+	.slick-dots li.slick-active button:before {
+		height: 10px;
 	}
 }
