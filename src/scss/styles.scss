@@ -75,10 +75,14 @@ h2 {
 	}
 }
 
+
+
+
+
 .select-hidden {
-display: none;
-visibility: hidden;
-padding-right: 10px;
+	display: none;
+	visibility: hidden;
+	padding-right: 10px;
 }
 .select {
 	background-color: $select-background;
@@ -130,7 +134,7 @@ padding-right: 10px;
 }
 	
 .select-options {
-	display: none; 
+	display: none;
 	position: absolute;
 	top: 100%;
 	right: 0;
@@ -140,9 +144,10 @@ padding-right: 10px;
 	padding: 0;
 	list-style: none;
 	background-color: $select-background;
+	@include tr(all, .2s);
 	li {
 		color: rgba(0,0,0, .3) !important;
-		margin: -1px -1.5px 0 -1.5px;
+		margin: -1px -1.2px 0 -1.2px;
 		padding: 12px 0;
 		text-indent: 20px;
 		border: 1.5px solid darken($select-background, 10);
@@ -151,7 +156,7 @@ padding-right: 10px;
 			background: $border-color;
 		}
 		&[rel="hide"] {
-		display: none;
+			display: none;
 		}
 	}
 }
@@ -437,26 +442,25 @@ padding-right: 10px;
 	&__form,
 	&__block-input  {
 		display: flex;
-		flex-direction: column;		
+		width: 100%;
 	}
 	&__form {
-		width: 100%;
-		max-width: 590px;
+		flex-direction: column;		
 		align-items: center;
 		margin: 40px auto 0 auto;
 	}
 	&__block-input {
-		align-items: flex-start;
-		width: 100%;
-		max-width: 590px;
+		justify-content: space-around;
+		flex-wrap: wrap;
 	}
 	&__name,
 	&__city {
 		width: 100%;
+		max-width: 500px;
 		input {
 			border: 1.5px solid rgba(0,0,0, .2);
 			margin: 20px 0;
-			padding: 25px 30px;
+			padding: 22px 20px;
 			width: 100%;
 			&::placeholder {
 				color: rgba(0,0,0, .3);
@@ -470,11 +474,21 @@ padding-right: 10px;
 		}
 	}
 	&__btn {
-		margin: 20px auto 0 auto;
+	}
+	&__btn-block {
+		margin: 20px 0 0 0;
+		display: flex;
+		width: 100%;
+		justify-content: space-around;
+	}
+	&__link {
+		color: $primary-color;
+		background: $default-color;
+		border: 2px solid $secondary-color;
 	}
 	.select {
 		width: 100%;	
-		max-width: 590px;
+		max-width: 500px;
 		
 	}
 

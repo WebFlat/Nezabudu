@@ -38,9 +38,9 @@ jQuery(function($){
 		$styledSelect.click(function(e) {
 			e.stopPropagation();
 			$('div.select-styled.select-active').not(this).each(function(){
-				$(this).removeClass('select-active').next('ul.select-options').hide();
+				$(this).removeClass('select-active').next('ul.select-options').hide().css('height', '0');
 			});
-			$(this).toggleClass('select-active').next('ul.select-options').toggle();
+			$(this).toggleClass('select-active').next('ul.select-options').toggle().css('height', 'auto');
 		});
 	  
 		$listItems.click(function(e) {

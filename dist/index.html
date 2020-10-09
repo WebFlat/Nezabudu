@@ -167,7 +167,17 @@
 	                </div>
 	                <div class="search__city">
 	                    <label for="search-city">Поиск по городу</label>
-	                    <input type="text" id="search-city" required placeholder="Мариуполь">
+	                    <select class="select__options search__select" id="search-city" >
+	                        <option value="hide">Мариуполь</option>
+	                        <option value="Киев" rel="icon-temperature">Киев</option>
+	                        <option value="Одесса">Одесса</option>
+	                        <option value="Мариуполь">Мариуполь</option>
+	                        <option value="Запорожье">Запорожье</option>
+	                        <option value="Харьков">Харьков</option>
+	                        <option value="Днепр">Днепр</option>
+	                        <option value="Львов">Львов</option>
+	                    </select>
+	                    <!-- <input type="text" id="search-city" required placeholder="Мариуполь"> -->
 	                </div>
 	            </div>
 	            <select class="select__options search__select" id="activity">
@@ -187,7 +197,10 @@
 	                <option value="1990-2000">1990-2000</option>
 	                <option value="2000-по сегодня">2000 - по сегодня</option>
 	            </select>
-	            <input type="submit" class="btn search__btn" value="Поиск">
+	            <div class="search__btn-block">
+	                <input type="submit" class="btn search__btn" value="Поиск">
+	                <a href="#" class="search__link btn">Заполнить анкету</a>
+	            </div>  
 	        </form>
 	    </div>
 	</section>
