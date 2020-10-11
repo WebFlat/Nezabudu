@@ -224,7 +224,7 @@ h2 {
 
 //Header-section********************************************
 .header {
-	padding: 10px 0 0 0;
+	// padding: 10px 0 0 0;
 	background: $default-color;
 	position: fixed;
 	width: 100%;
@@ -294,7 +294,8 @@ h2 {
 
 //Welcome-block************************************************
 .welcome {
-	padding: 130px 0 160px 0;
+	padding: 100px 0 190px 0;
+	// height: 100vh;
 	&__content {
 		display: flex;
 		align-items: center;
@@ -333,7 +334,7 @@ h2 {
 		}	
 	}
 	&__img {
-		max-width: 110%;
+		max-width: 100%;
 	}
 }
 
