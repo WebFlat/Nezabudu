@@ -2,14 +2,14 @@
 @import 'mixins';
 @import 'slick';
 @import 'slick-theme';
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@500&family=Ubuntu:wght@300;400;700&display=swap');
 
 $primary-color: #000000;
 $default-color: #ffffff;
 $secondary-color: rgba(0,0,0, .4);
 $btn-color: #041E36;
-$btn-text: #C1C3C4;
+$btn-text: #ffffff;
 
 //select section******************************
 $select-color: $primary-color;
@@ -34,12 +34,14 @@ html {
 
 
 body {
-	font-family: 'Manrope', sans-serif;
-	font-size: 1.4rem;
+	font-family: 'Montserrat', sans-serif;	
+	font-size: 1.8rem;
 	line-height: 1.2;
 	min-height: 100%;
 	font-weight: 400;
 	background: $default-color;
+	letter-spacing: 2px;
+
 }
 a {
 	text-decoration: none;
@@ -47,11 +49,13 @@ a {
 }
 h2 {
 	font-size: 1.8rem;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
 }
 
 //Helpers*******************************************
 .wrapper {
-	max-width: 1670px;
+	max-width: 1216px;
 	width: 90%;
 	margin: 0 auto;
 	height: 100%;
@@ -60,11 +64,10 @@ h2 {
 	display: block;
 	color: $btn-text;
 	background: $btn-color;
-	font-weight: 700;
-	font-size: 1.4rem;
-	padding: 20px 5px;
+	padding: 13px 5px;
+	line-height: 48px;
 	border-radius: 5px;
-	width: 250px;
+	width: 328px;
 	text-align: center;
 	cursor: pointer;
 	border: none;
@@ -94,18 +97,23 @@ h2 {
 	height: $select-height;
 	max-width: 590px;
 	margin: 20px 0;
-	padding: 30px 0 30px 20px;
+	padding: 39px 0 39px 60px;
 	border: 1.5px solid $border-color;
-	color: rgba(0,0,0, .3) !important;
-	font-weight: 700;
-	font-size: 1.4rem;
+	color: $primary-color;
+	font-size: 1.8rem;
+	&--lang {
+		max-width: auto;
+		width: 136px;
+		border: none;
+		padding: 10px 0 30px 0;
+	}
 }
 .select-styled {
 	position: absolute; 
-	top: 25%;
+	top: 20px;
 	right: 0;
 	bottom: 0;
-	left: 10px;
+	left: 60px;
 	// background-color: $select-background;
 	padding: 8px 15px;
 	@include tr(all, 0.2s);
@@ -116,8 +124,8 @@ h2 {
 		border: 7px solid transparent;
 		border-color: $select-color transparent transparent transparent;
 		position: absolute;
-		top: 12px;
-		right: 25px;
+		top: 30%;
+		right: 6%;
 	}
 	&:hover {
 		border-color: $btn-color;
@@ -132,7 +140,24 @@ h2 {
 		}
 	}
 }
-	
+.select--lang {
+	max-width:auto;
+	width:136px;
+	.select-styled {
+		left: 4px;
+		top: 5px;
+		&:after {
+			top: 40%;
+			right: -45px;
+		}
+		&:active, 
+		&.select-active {
+			&:after {
+			top: 4px;
+		}
+	}
+	}	
+}	
 .select-options {
 	display: none;
 	position: absolute;
@@ -159,6 +184,14 @@ h2 {
 			display: none;
 		}
 	}
+	&--lang {
+			max-width: auto;
+			width: 136px;
+		li {
+			border: none !important;
+			padding: 5px 0;
+		}
+	}
 }
 
 
@@ -166,7 +199,7 @@ h2 {
 
 //Header-section********************************************
 .header {
-	padding: 10px 0;
+	padding: 10px 0 0 0;
 	background: $default-color;
 	position: fixed;
 	width: 100%;
@@ -181,14 +214,14 @@ h2 {
 		color: $primary-color;
 	}
 	&__link {
-		font-size: 2.4rem;
-		font-weight: 700;
-		letter-spacing: 4px;
+		font-size: 2.2rem;
+		letter-spacing: 8px;
 		text-transform: uppercase;
-	}
+		font-family: 'Roboto', sans-serif;
+		}
 	&__soc-link {
-		width: 27px;
-		height: 27px;
+		width: 30px;
+		height: 30px;
 		border: 2px solid $primary-color;
 		display: flex;
 		justify-content: center;
@@ -201,8 +234,8 @@ h2 {
 			box-shadow: 0px 0px 11px 0px rgba(50, 50, 50, 0.75);;
 		}
 		img {
-			width: 15px;
-			height: 15px;
+			width: 16px;
+			height: 16px;
 		}
 		&:nth-child(2) {
 			margin: 0 15px;
@@ -217,7 +250,6 @@ h2 {
 		@include tr(all, .2s);
 		span {
 			margin-right: 10px;
-			font-size: 2rem;
 			font-weight: 700;
 		}
 		img {
@@ -244,23 +276,34 @@ h2 {
 		height: 100%;	
 	}
 	&__title {
-		font-size: 3.2rem;
+		margin: 45px 0 40px 0;
+		font-size: 4rem;
+		letter-spacing: 4px;
+		line-height: 48px;
 	}
 	&__text {
 		width: 50%;
 	}
-	&__description,
-	&__subtitle {
-		font-size: 1.4rem;
-		font-weight: 700;
-		color: $secondary-color;
+	&__description {
+		padding-left: 30px;
+		position: relative;
+		line-height: 30px;
+		margin: 0;
 		&:last-of-type {
-			margin-bottom: 60px;
+			margin-bottom: 30px;
 		}
 		span {
-			font-weight: 700;
 			font-size: 2.5rem;
-			color: $primary-color;
+			&::before {
+				content: '';
+				background: url('../img/check.png') no-repeat;
+				display: block;
+				position: absolute;
+				top: 10px;
+				left: 0;
+				width: 20px;
+				height: 20px;	
+			}
 		}	
 	}
 }
@@ -271,33 +314,37 @@ h2 {
 
 //About-section******************************
 .about {
-	&__title,
+	position: relative;
+	&__title {
+		text-align: center;
+		font-size: 3rem;
+	}
 	&__subtitle {
-		width: 60%;
+		line-height: 36px;
+		margin: 0 0 30px 0;
+		padding-left: 20%;
 	}
 	&__content {
 		display: flex;
-		justify-content:center;
-		position: relative;
+		margin-top: 75px;
+
 	}
 	&__gallery {
-		width: 45%;
+		width: 40%;
 		display: grid;
-		align-items: end;
-		// grid-template-rows: repeat(2, 1fr);
+		// align-items: end;
+		grid-template-rows: repeat(2, 300px);
 		grid-template-columns: repeat(2, 1fr);
-		grid-gap: 30px;
+		grid-gap: 50px;
 	}
 	&__items {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		width: 45%;
-		align-items: flex-end;
+		align-items: center;
 	}
 	&__img-wrap {
-		width: 100%;
-		max-width: 280px;
+		width: 215px;
+		// max-width: 280px;
 		height: 300px;
 		// background: rgba(0,0,0, .1);
 		// margin: 10px 0 30px 0;
@@ -306,22 +353,24 @@ h2 {
 	}
 	&__img {
 		@include myPos();
-		max-width: 160%;
 		// height: 100%;
 		// opacity: .7;
 	}
 	&__text-center {
 		display: block;
-		width: 300px;
-		height: 300px;
+		width: 240px;
+		height: 240px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		border-radius: 50%;
-		@include myPos(50%, 50%, -50%,-50%);
-		font-size: 3.5rem;
-		font-weight: 700;
+		@include myPos(425px, 44%, -50%, -50%);
+		font-size: 2.1rem;
+		font-weight: 500;
 		background: $default-color;
+		font-family: 'Roboto', sans-serif;
+		text-transform: uppercase;
+		letter-spacing: 8px;
 	}
 
 }
@@ -331,22 +380,23 @@ h2 {
 
 //Posibility section******************************
 .posibility {
-	padding-top: 150px;
+	padding-top: 190px;
 	&__title {
-		font-size: 2.8rem;
+		font-size: 2.4rem;
 		text-align: center;
 	}
 	&__content {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
+		justify-content: space-around;
 	}
 	&__item {
 		position: relative;
 		margin-top: 80px;
-		width: 50%;
+		width: 100%;
+		max-width: 594px;
 		display: flex;
-		justify-content: flex-end;
+		align-items: center;
 		&:nth-child(2n) {
 			justify-content: flex-start;
 		}
@@ -362,12 +412,17 @@ h2 {
 	}
 	&__img-wrap,
 	&__link {
-		width: 280px;
-		min-width: 280px;
-		height: 280px;
+		min-width: 345px;
+		width: 345px;
+		height: 345px;
 		border-radius: 50%;
 		border: 1px solid $secondary-color;
 		overflow: hidden;
+	}
+	&__img-wrap {
+		min-width: 316px;
+		width: 316px;
+		height: 316px;	
 	}
 	&__link {
 		padding: 0 15px;
@@ -382,7 +437,7 @@ h2 {
 		background: $default-color;
 		animation: 3s shine infinite;
 		animation-delay: 2s;
-		border: 20px solid $btn-text;
+		border: 10px solid #e7224d;
 		@include tr(color, .2s);
 		&:after {
 			content: '';
@@ -393,7 +448,7 @@ h2 {
 			height: 100%;
 			color: #fff;
 			text-decoration: none;
-			background: linear-gradient(0deg, rgb(190, 184, 190), rgb(113, 110, 113));
+			background: #e7224d;
 			opacity: 0;
 			transition: opacity .4s;
 			z-index: -1;
@@ -403,17 +458,16 @@ h2 {
 		}
 		&:hover {
 			color: $default-color;
-			animation-play-state: paused;
 		}
 
 	}
 	&__subtitle {
 		font-weight: 500;
-		font-size: 1.6rem;
+		font-size: 1.8rem;
 	}
 	&__text {
-		font-size: 1.3rem;
-		margin-top: 20px;
+		font-size: 1.4rem;
+		margin-top: 30px;
 		line-height: 1.6;
 	}
 
@@ -421,23 +475,27 @@ h2 {
 
 @keyframes shine {
 	0% {
-		border-color: $btn-text;
+		border-color: #e7224d;
 	}
 	50% {
 		border-color: #9f9999;
 
 	}
 	100% {
-		border-color: $btn-text;
+		border-color: #e7224d;
 	}
 }
 
 
 //search section******************************
 .search {
-	padding-top: 140px;
+	padding-top: 165px;
 	&__title {
-		font-size: 2.8rem;
+		font-size: 2.4rem;
+	}
+	&__subtitle {
+		line-height: 30px;
+		margin: 10px;
 	}
 	&__form,
 	&__block-input  {
@@ -447,7 +505,7 @@ h2 {
 	&__form {
 		flex-direction: column;		
 		align-items: center;
-		margin: 40px auto 0 auto;
+		margin: 90px auto 0 auto;
 	}
 	&__block-input {
 		justify-content: space-around;
@@ -460,17 +518,16 @@ h2 {
 		input {
 			border: 1.5px solid rgba(0,0,0, .2);
 			margin: 20px 0;
-			padding: 22px 20px;
+			padding: 30px 20px 30px 65px;
 			width: 100%;
 			&::placeholder {
 				color: rgba(0,0,0, .3);
-				font-weight: 700;
-				font-size: 1.4rem;
 			}
 		}
 		label {
 			display: block;
 			text-align: left;
+			margin-bottom: 10px;
 		}
 	}
 	&__btn {
