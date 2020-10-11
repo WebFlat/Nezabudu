@@ -13619,6 +13619,15 @@ jQuery(function($){
 			arrows: false,
 			autoplay: true
 		});
+		$('.personality__carusel').slick({
+			dots: true,
+			slidesToShow: 3,
+			infinite: true,
+			speed: 500,
+			arrows: false,
+			autoplay: true
+
+		});
 	});
 
 	$('.select__options').each(function(){
@@ -13678,6 +13687,51 @@ jQuery(function($){
 	  
 		var $list = $('<ul />', {
 			'class': 'select-options select-options--lang'
+		}).insertAfter($styledSelect);
+	  
+		for (var i = 0; i < numberOfOptions; i++) {
+			$('<li />', {
+				text: $this.children('option').eq(i).text(),
+				rel: $this.children('option').eq(i).val()
+			}).appendTo($list);
+		}
+	  
+		var $listItems = $list.children('li');
+	  
+		$styledSelect.click(function(e) {
+			e.stopPropagation();
+			$('div.select-styled.select-active').not(this).each(function(){
+				$(this).removeClass('select-active').next('ul.select-options').hide().css('height', '0');
+			});
+			$(this).toggleClass('select-active').next('ul.select-options').toggle().css('height', 'auto');
+		});
+	  
+		$listItems.click(function(e) {
+			e.stopPropagation();
+			$styledSelect.text($(this).text()).removeClass('select-active');
+			$this.val($(this).attr('rel'));
+			$list.hide();
+			//console.log($this.val());
+		});
+	  
+		$(document).click(function() {
+			$styledSelect.removeClass('select-active');
+			$list.hide();
+		});
+	
+	});
+	$('#helps').each(function(){
+		var $this = $(this), numberOfOptions = $(this).children('option').length;
+	  
+		$this.addClass('select-hidden'); 
+		$this.wrap('<div class="select select--helps"></div>');
+		$this.after('<div class="select-styled"></div>');
+	
+		var $styledSelect = $this.next('div.select-styled');
+		$styledSelect.text($this.children('option').eq(0).text());
+	  
+		var $list = $('<ul />', {
+			'class': 'select-options select-options--helps'
 		}).insertAfter($styledSelect);
 	  
 		for (var i = 0; i < numberOfOptions; i++) {
