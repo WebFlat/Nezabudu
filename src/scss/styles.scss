@@ -87,7 +87,6 @@ h2 {
 	cursor: pointer;
 	border: none;
 	@include tr(all, .1s);
-	margin: 0 auto;
 	&:hover,
 	&:focus {
 		box-shadow: 0px 0px 21px 0px rgba(50, 50, 50, 0.91);
@@ -96,6 +95,8 @@ h2 {
 @media screen and (max-width: 1023px) {
 	.btn {
 		padding: 9px 5px;
+		margin: 0 auto;
+
 	}	
 }
 
@@ -398,6 +399,7 @@ h2 {
 		&__title {
 			font-size: 2.4rem;
 			margin: 0 0 20px 0;
+			text-align: center;
 		}
 		&__img-wrap {
 			width: 75%;
@@ -578,9 +580,13 @@ h2 {
 		// 	@include myPos();
 		// 	max-width: 150%;
 		// }
-		&:hover,
-		&:focus {
-			border-color: $primary-color;
+		// &:hover,
+		// &:focus {
+		// 	border-color: $primary-color;
+		// }
+		&:hover svg,
+		&:focus svg {
+				filter: invert(49%) sepia(87%) saturate(1285%) hue-rotate(301deg) brightness(87%) contrast(87%);
 		}	
 	}
 	&__link {
@@ -780,7 +786,7 @@ h2 {
 		}
 		&__btn,
 		&__link {
-			font-size: 1.4rem;
+			font-size: 1.2rem;
 		}
 	}
 }
@@ -807,6 +813,9 @@ h2 {
 		display: flex;
 		justify-content: flex-end;
 	}
+	&__title--show {
+		display: none;
+	}
 }
 @media screen and (max-width: 768px) {
 	.questionnaires {
@@ -825,9 +834,13 @@ h2 {
 				max-width: 100%;
 			}
 		}
-		&__title,
+		&__title {
+			display: none;
+		}
+		&__title--show,
 		&__text {
 			text-align: center;
+			display: block;
 		}
 		&__text {
 			line-height: 24px;
@@ -1042,6 +1055,7 @@ h2 {
 			font-size: 1.8rem;
 			line-height: 30px;
 			margin: 0;
+			text-align: center;
 		}
 		&__name,
 		&__tel {
@@ -1132,7 +1146,7 @@ h2 {
 		color: $secondary-color;
 		span {
 			opacity: .3;
-			line-height: 36px;
+			line-height: 48px;
 		}
 	}
 }

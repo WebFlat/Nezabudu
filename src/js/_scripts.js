@@ -8,7 +8,27 @@ jQuery(function($){
 			infinite: true,
 			speed: 500,
 			arrows: false,
-			autoplay: true
+			autoplay: true,
+			responsive: [ 
+				{ 
+					breakpoint: 1024,
+					settings: {
+						slidesToShow: 3,
+					}
+				},
+				{ 
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 2,
+					}
+				},
+				{ 
+					breakpoint: 470,
+					settings: {
+						slidesToShow: 1,
+					}
+				}
+			]
 		});
 		$('.personality__carusel').slick({
 			dots: true,
@@ -16,7 +36,22 @@ jQuery(function($){
 			infinite: true,
 			speed: 500,
 			arrows: false,
-			autoplay: true
+			autoplay: true,
+			responsive: [ 
+				{ 
+					breakpoint: 1024,
+					settings: {
+						slidesToShow: 2,
+					}
+				},
+				{ 
+					breakpoint: 500,
+					settings: {
+						slidesToShow: 1,
+						arrows: true
+					}
+				}
+			]
 
 		});
 	});
